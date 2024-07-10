@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATC-Buddy</title>
+    <style>
+        /* Basic styling for the entire page */
+        body {
+            background-color: #0d1117; /* dark mode background color */
+            color: #c9d1d9; /* dark mode text color */
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Styling for the navigation menu */
+        nav {
+            background-color: #161b22; /* Darker background for the nav */
+            padding: 1em; /* Padding inside the nav */
+        }
+
+        nav a {
+            color: #58a6ff; /* Link color */
+            margin-right: 1em; /* Space between links */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #161b22;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #58a6ff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d1117;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hide all sections by default */
+        section {
+            display: none;
+            padding: 1em;
+        }
+
+        /* Show the active section */
+        section.active {
+            display: block;
+        }
+    </style>
+    <script>
+        // Function to show a specific section
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show the selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation menu -->
+    <nav>
+        <a href="#" onclick="showSection('home')">HOME</a>
+
+        <!-- Tools dropdown menu -->
+        <div class="dropdown">
+            <a href="#">TOOLS</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="showSection('sep-by-spd')">SEP BY SPD</a>
+                <a href="#" onclick="showSection('top-of-descent')">TOP OF DESCENT</a>
+            </div>
+        </div>
+
+        <!-- References dropdown menu -->
+        <div class="dropdown">
+            <a href="#">REFERENCES</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="showSection('phraseology')">PHRASEOLOGY</a>
+                <a href="#" onclick="showSection('7110.65')">7110.65</a>
+                <a href="#" onclick="showSection('atc-coordination')">ATC COORDINATION</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="content">
+        <!-- Home section -->
+        <section id="home" class="active">
+            <h1>Welcome to ATC-Buddy</h1>
+            <p>This tool is designed to help VATSIM Air Traffic Controllers with various reference materials and tools.</p>
+        </section>
+
+        <!-- SEP BY SPD section -->
+        <section id="sep-by-spd">
+            <h1>Separation by Speed</h1>
+            <p>Placeholder content for SEP BY SPD.</p>
+        </section>
+
+        <!-- TOP OF DESCENT section -->
+        <section id="top-of-descent">
+            <h1>Top of Descent</h1>
+            <p>Placeholder content for TOP OF DESCENT.</p>
+        </section>
+
+        <!-- PHRASEOLOGY section -->
+        <section id="phraseology">
+            <h1>Phraseology</h1>
+            <p>Placeholder content for Phraseology.</p>
+        </section>
+
+        <!-- 7110.65 section -->
+        <section id="7110.65">
+            <h1>7110.65</h1>
+            <p>Placeholder content for 7110.65.</p>
+        </section>
+
+        <!-- ATC COORDINATION section -->
+        <section id="atc-coordination">
+            <h1>ATC Coordination</h1>
+            <p>Placeholder content for ATC Coordination.</p>
+        </section>
+    </div>
+</body>
+</html>
