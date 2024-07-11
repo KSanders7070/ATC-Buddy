@@ -140,6 +140,23 @@
             // Display the result
             document.getElementById('sep-by-spd-result').textContent = result;
         }
+
+        // Function to calculate top of descent
+        function calculateTopOfDescent() {
+            // Get form values
+            const currentAlt = parseFloat(document.getElementById('current-alt').value);
+            const targetAlt = parseFloat(document.getElementById('target-alt').value);
+
+            // Calculate the Top Of Descent Distance
+            let todDistance = ((currentAlt - targetAlt) * 3) / 10;
+            if (targetAlt < 100 && currentAlt >= 100) {
+                todDistance += 10;
+            }
+
+            // Display the result
+            document.getElementById('tod-result').textContent = 
+                `The Top-of-Descent is ${todDistance.toFixed(2)} miles from the target altitude point.`;
+        }
     </script>
 </head>
 <body>
@@ -199,7 +216,16 @@
         <!-- TOP OF DESCENT section -->
         <section id="top-of-descent">
             <h1>Top of Descent</h1>
-            <p>Content for Top of Descent goes here...</p>
+            <form id="tod-form">
+                <label for="current-alt">Current Altitude (hundreds of feet):</label>
+                <input type="number" id="current-alt" name="current-alt" required><br>
+
+                <label for="target-alt">Target Altitude (hundreds of feet):</label>
+                <input type="number" id="target-alt" name="target-alt" required><br>
+
+                <button type="button" onclick="calculateTopOfDescent()">Calculate Top of Descent</button>
+            </form>
+            <p id="tod-result"></p>
         </section>
 
         <!-- PHRASEOLOGY section -->
