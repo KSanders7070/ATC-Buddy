@@ -69,6 +69,33 @@
         section.active {
             display: block;
         }
+
+        /* Style for input boxes */
+        input[type="number"] {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            width: calc(100% - 1em);
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+
+        button {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #30363d;
+        }
     </style>
     <script>
         // Function to show a specific section
@@ -82,6 +109,36 @@
             if (section) {
                 section.classList.add('active');
             }
+        }
+
+        // Function to calculate separation by speed
+        function calculateSeparation() {
+            // Get form values
+            const leadSpeed = parseFloat(document.getElementById('lead-speed').value);
+            const trailSpeed = parseFloat(document.getElementById('trail-speed').value);
+            const distance = parseFloat(document.getElementById('distance').value);
+            const time = parseFloat(document.getElementById('time').value);
+
+            // Calculate distances covered in the given time
+            const leadDistance = leadSpeed * (time / 60);
+            const trailDistance = trailSpeed * (time / 60);
+
+            // Determine new separation distance
+            const closingDistance = trailDistance - leadDistance;
+            const newDistance = distance - closingDistance;
+
+            // Determine which aircraft is ahead and by how much
+            let result = '';
+            if (newDistance > 0) {
+                result = `In ${time} minutes, the lead aircraft will be ahead by ${newDistance.toFixed(2)} miles.`;
+            } else if (newDistance < 0) {
+                result = `In ${time} minutes, the trailing aircraft will be ahead by ${Math.abs(newDistance).toFixed(2)} miles.`;
+            } else {
+                result = `In ${time} minutes, both aircraft will be at the same position.`;
+            }
+
+            // Display the result
+            document.getElementById('sep-by-spd-result').textContent = result;
         }
     </script>
 </head>
@@ -121,31 +178,46 @@
         <!-- SEP BY SPD section -->
         <section id="sep-by-spd">
             <h1>Separation by Speed</h1>
-            <p>Placeholder content for SEP BY SPD.</p>
+            <form id="sep-by-spd-form">
+                <label for="lead-speed">Lead Aircraft Speed (knots):</label>
+                <input type="number" id="lead-speed" name="lead-speed" required><br>
+
+                <label for="trail-speed">Trailing Aircraft Speed (knots):</label>
+                <input type="number" id="trail-speed" name="trail-speed" required><br>
+
+                <label for="distance">Current Distance Between Aircraft (miles):</label>
+                <input type="number" id="distance" name="distance" required><br>
+
+                <label for="time">Time in the Future (minutes):</label>
+                <input type="number" id="time" name="time" required><br>
+
+                <button type="button" onclick="calculateSeparation()">Calculate Separation</button>
+            </form>
+            <p id="sep-by-spd-result"></p>
         </section>
 
         <!-- TOP OF DESCENT section -->
         <section id="top-of-descent">
             <h1>Top of Descent</h1>
-            <p>Placeholder content for TOP OF DESCENT.</p>
+            <p>Content for Top of Descent goes here...</p>
         </section>
 
         <!-- PHRASEOLOGY section -->
         <section id="phraseology">
             <h1>Phraseology</h1>
-            <p>Placeholder content for Phraseology.</p>
+            <p>Content for Phraseology goes here...</p>
         </section>
 
         <!-- 7110.65 section -->
         <section id="7110.65">
             <h1>7110.65</h1>
-            <p>Placeholder content for 7110.65.</p>
+            <p>Content for 7110.65 goes here...</p>
         </section>
 
         <!-- ATC COORDINATION section -->
         <section id="atc-coordination">
             <h1>ATC Coordination</h1>
-            <p>Placeholder content for ATC Coordination.</p>
+            <p>Content for ATC Coordination goes here...</p>
         </section>
     </div>
 </body>
