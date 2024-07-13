@@ -96,9 +96,23 @@
         button:hover {
             background-color: #30363d;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #30363d;
+        }
+
+        th, td {
+            padding: 0.5em;
+            text-align: center;
+        }
     </style>
 
-    <!-- Sripts Area -->
+    <!-- Scripts Area -->
     <script>
         // Current Version Number of this file
         const versionNumber = '0.0.2';
@@ -116,7 +130,7 @@
             }
         }
 
-        // Function to calculate separation by speed
+        // Function to calculate Miles-in-Trail by Speed
         function calculateSeparation() {
             // Get form values
             const leadSpeed = parseFloat(document.getElementById('lead-speed').value);
@@ -143,7 +157,7 @@
             }
 
             // Display the result
-            document.getElementById('sep-by-spd-result').textContent = result;
+            document.getElementById('mit-spd-result').textContent = result;
         }
 
         // Function to calculate top of descent
@@ -163,6 +177,33 @@
                 `The Top-of-Descent is ${todDistance.toFixed(2)} miles from the target altitude point.`;
         }
 
+        // Function to calculate In-Trail by Vector
+        function calculateInTrailByVector() {
+            // Get form values
+            const gndSpd = parseFloat(document.getElementById('gnd-spd').value);
+            const spacingNeeded = parseFloat(document.getElementById('spacing-needed').value);
+
+            // Create the table
+            let table = `<table>
+                            <tr>
+                                <th>VECTOR OFF COURSE (degrees)</th>
+                                <th>LENGTH OF VECTOR (in min)</th>
+                            </tr>`;
+
+            for (let offCourseVectorValue = 5; offCourseVectorValue <= 90; offCourseVectorValue += 5) {
+                const vectorDuration = spacingNeeded / ((offCourseVectorValue / 90) * (gndSpd / 60));
+                table += `<tr>
+                            <td>${offCourseVectorValue}</td>
+                            <td>${vectorDuration.toFixed(1)}</td>
+                          </tr>`;
+            }
+
+            table += `</table>`;
+
+            // Display the result
+            document.getElementById('it-vec-result').innerHTML = table;
+        }
+
         // Function to update the version number on the home page
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('version').textContent = versionNumber;
@@ -178,8 +219,9 @@
         <div class="dropdown">
             <a href="#">TOOLS</a>
             <div class="dropdown-content">
-                <a href="#" onclick="showSection('sep-by-spd')">SEP BY SPD</a>
+                <a href="#" onclick="showSection('mit-spd')">MIT SPD</a>
                 <a href="#" onclick="showSection('top-of-descent')">TOP OF DESCENT</a>
+                <a href="#" onclick="showSection('it-vec')">IT VEC</a> <!-- New IT VEC tool link -->
             </div>
         </div>
 
@@ -204,14 +246,14 @@
             <p><a href="https://github.com/KSanders7070/ATC-Buddy/releases" target="_blank">Check out the latest releases here</a>.</p>
         </section>
 
-        <!-- SEP BY SPD section -->
-        <section id="sep-by-spd">
-            <h1>Separation by Speed</h1>
-            <form id="sep-by-spd-form">
-                <label for="lead-speed">Lead Aircraft Speed (knots):</label>
+        <!-- MIT SPD section -->
+        <section id="mit-spd">
+            <h1>Miles-in-Trail by Speed</h1>
+            <form id="mit-spd-form">
+                <label for="lead-speed">Lead Aircraft Ground Speed (knots):</label>
                 <input type="number" id="lead-speed" name="lead-speed" required><br>
 
-                <label for="trail-speed">Trailing Aircraft Speed (knots):</label>
+                <label for="trail-speed">Trailing Aircraft Ground Speed (knots):</label>
                 <input type="number" id="trail-speed" name="trail-speed" required><br>
 
                 <label for="distance">Current Distance Between Aircraft (miles):</label>
@@ -222,7 +264,7 @@
 
                 <button type="button" onclick="calculateSeparation()">Calculate Separation</button>
             </form>
-            <p id="sep-by-spd-result"></p>
+            <p id="mit-spd-result"></p>
         </section>
 
         <!-- TOP OF DESCENT section -->
@@ -238,6 +280,21 @@
                 <button type="button" onclick="calculateTopOfDescent()">Calculate Top of Descent</button>
             </form>
             <p id="tod-result"></p>
+        </section>
+
+        <!-- IT VEC section -->
+        <section id="it-vec">
+            <h1>In-Trail by Vector</h1>
+            <form id="it-vec-form">
+                <label for="gnd-spd">Ground Speed of In-Trail Aircraft (knots):</label>
+                <input type="number" id="gnd-spd" name="gnd-spd" required><br>
+
+                <label for="spacing-needed">Spacing Needed (miles or minutes):</label>
+                <input type="number" id="spacing-needed" name="spacing-needed" required><br>
+
+                <button type="button" onclick="calculateInTrailByVector()">Calculate Vector</button>
+            </form>
+            <div id="it-vec-result"></div>
         </section>
 
         <!-- PHRASEOLOGY section -->
