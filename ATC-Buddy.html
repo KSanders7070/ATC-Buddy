@@ -97,7 +97,12 @@
             background-color: #30363d;
         }
     </style>
+
+    <!-- Sripts Area -->
     <script>
+        // Current Version Number of this file
+        const versionNumber = '0.0.2';
+
         // Function to show a specific section
         function showSection(sectionId) {
             // Hide all sections
@@ -157,6 +162,11 @@
             document.getElementById('tod-result').textContent = 
                 `The Top-of-Descent is ${todDistance.toFixed(2)} miles from the target altitude point.`;
         }
+
+        // Function to update the version number on the home page
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('version').textContent = versionNumber;
+        })
     </script>
 </head>
 <body>
@@ -190,6 +200,8 @@
         <section id="home" class="active">
             <h1>Welcome to ATC-Buddy</h1>
             <p>This tool is designed to help VATSIM Air Traffic Controllers with various reference materials and tools.</p>
+            <p>You are currently using version <span id="version"></span>.</p>
+            <p><a href="https://github.com/KSanders7070/ATC-Buddy/releases" target="_blank">Check out the latest releases here</a>.</p>
         </section>
 
         <!-- SEP BY SPD section -->
