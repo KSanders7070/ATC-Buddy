@@ -170,81 +170,82 @@ D = Direction of flight/route
 
  - TYPE:
    - "(you), (me). (type of coordination)."
-    - “Stockton, Gunnison. Handoff.”
+     - “Stockton, Gunnison. Handoff.”
    - Once the controller answers your request to start coordinating, follow through with the following items.
 
  - WHERE:
    - State the distance and direction of the reference target from a NAVAID/Fix that is shown on both ATC RADAR displays.
-    - “8 miles northeast OGD VORTAC, etc…”
+     - “8 miles northeast OGD VORTAC, etc…”
    - The Distance may be omitted if utilizing the Point-Out/Full Datablock function.
-    - “northeast OGD VORTAC, etc…”
+     - “northeast OGD VORTAC, etc…”
  - WHO:
    - State the type of target to look for, as appropriate (Primary Target, Beacon Code and/or Callsign).
    - If you and the controller are both simulating use of ERAM and the aircrafts’ route will take them within approx 60 miles of your border, you may state the Callsign only.
-    - “Primary Target, etc…”
-    - “Primary Target is AAL7564, etc…” “Beacon 1235, etc…”
-    - “Beacon 1235 is AAL7564, etc…” “AAL7564, etc…”
+     - “Primary Target, etc…”
+     - “Primary Target is AAL7564, etc…”
+     - “Beacon 1235, etc…”
+     - “Beacon 1235 is AAL7564, etc…” “AAL7564, etc…”
    - When referencing the target to a facility that does not use the same RADAR System as yours, you must reference the beacon code if the aircraft's flight plan and hard-assigned altitude does not take them through the facility.
-    - “Beacon 1235, etc…”
+     - “Beacon 1235, etc…”
  - ALTITUDE:
    - State the current verified MODE-C altitude response. This may be omitted if the other controller is the same facility as you, as the altitude information is being gathered from the same source.
-    - “One-Zero thousand, six hundred.”
+     - “One-Zero thousand, six hundred.”
    - If the aircraft is not level at an altitude, inform the other ATC of the aircraft’s climbing/descending status and the assigned altitude.
-    - “Climbing one-two thousand”
-    - “One-zero thousand, six hundred. Climbing one-two thousand”
-    - “One-zero thousand, six hundred. Climbing via SID”
+     - “Climbing one-two thousand”
+     - “One-zero thousand, six hundred. Climbing one-two thousand”
+     - “One-zero thousand, six hundred. Climbing via SID”
    - For Point-outs, the altitude(s) in which the pilot will be operating within the ATC’s airspace is required to be stated.
-    - “One-zero thousand, six hundred. Climbing 11,000”
-    - “One-zero thousand, six hundred. Climbing/Descending above/below your airspace”
+     - “One-zero thousand, six hundred. Climbing 11,000”
+     - “One-zero thousand, six hundred. Climbing/Descending above/below your airspace”
  - DIRECTION:
    - If appropriate (usually during point-outs), state the appropriate flight path information that affects their sector.
    - During handoff coordination, state the next fix that the aircraft is to progress. This may be omitted if the aircraft is on a route that is defined by LOA or is clearly shown in their flight strip.
-    - “Direct Milford VOR DME”
-    - “On the Delta Arrival.”
+     - “Direct Milford VOR DME”
+     - “On the Delta Arrival.”
    - During point-out coordination, inform the other ATC of the current route, next fix, and/or cardinal direction.
-    - “J58 to Milford VOR DME”
-    - “Direct Milford VOR DME”
-    - “Eastbound”
+     - “J58 to Milford VOR DME”
+     - “Direct Milford VOR DME”
+     - “Eastbound”
 
 EXAMPLES:
  - HANDOFF
    - ARTCC to ARTCC (Inter-facility)
-    - “Handoff, 11 miles southwest Milford VORTAC. AAL123. FL320.”
-    - “Handoff, 11 miles southwest Milford VORTAC. AAL123. FL326 climbing FL340.”
+     - “Handoff, 11 miles southwest Milford VORTAC. AAL123. FL320.”
+     - “Handoff, 11 miles southwest Milford VORTAC. AAL123. FL326 climbing FL340.”
    - ARTCC to ARTCC (intra-facility)
-    - “Handoff, 11 miles southwest Milford VORTAC. AAL123.”
-    - “Handoff, 11 miles southwest Milford VORTAC. AAL123. Climbing FL340.”
+     - “Handoff, 11 miles southwest Milford VORTAC. AAL123.”
+     - “Handoff, 11 miles southwest Milford VORTAC. AAL123. Climbing FL340.”
    - ARTCC to TRACON
-    - “Handoff, 11 miles south FRNZY. Beacon 1324 is AAL123. FL193. Descending 17,000.”
-    - “Handoff, 11 miles south FRNZY. Beacon 1324 is AAL123. FL193. Descending 17,000. Direct FRNZY.”
+     - “Handoff, 11 miles south FRNZY. Beacon 1324 is AAL123. FL193. Descending 17,000.”
+     - “Handoff, 11 miles south FRNZY. Beacon 1324 is AAL123. FL193. Descending 17,000. Direct FRNZY.”
    - TRACON to ARTCC
-    - “Handoff, 8 miles northeast Ogden VORTAC. Beacon 1324 is AAL123. FL193. Climbing FL230.”
-    - “Handoff, 8 miles northeast Ogden VORTAC. Beacon 1324 is AAL123. FL193. Climbing FL230. Direct UPJAR.”
+     - “Handoff, 8 miles northeast Ogden VORTAC. Beacon 1324 is AAL123. FL193. Climbing FL230.”
+     - “Handoff, 8 miles northeast Ogden VORTAC. Beacon 1324 is AAL123. FL193. Climbing FL230. Direct UPJAR.”
    - TRACON to TRACON (intra-facility) (or airport using the same RADAR Feed as the TRACON)
-    - “Handoff, northwest Ogden VORTAC. AAL123.”
-    - “Handoff, northwest Ogden VORTAC. AAL123. Descending 11,000.”
-    - “Handoff, northwest Ogden VORTAC. AAL123. Descending 11,000. Direct BUBBY”
+     - “Handoff, northwest Ogden VORTAC. AAL123.”
+     - “Handoff, northwest Ogden VORTAC. AAL123. Descending 11,000.”
+     - “Handoff, northwest Ogden VORTAC. AAL123. Descending 11,000. Direct BUBBY”
  - POINT-OUT
    - ARTCC to ARTCC (Inter-facility)
-    - (Force AAL123 FDB)
-    - “Point-Out, southwest Milford VORTAC. AAL123. FL320. Southbound”
-    - (Force AAL123 FDB)
-    - “Point-Out, 11 miles southwest Milford VORTAC. AAL123. FL326 climbing FL340. Southbound.”
+     - (Force AAL123 FDB)
+     - “Point-Out, southwest Milford VORTAC. AAL123. FL320. Southbound”
+     - (Force AAL123 FDB)
+     - “Point-Out, 11 miles southwest Milford VORTAC. AAL123. FL326 climbing FL340. Southbound.”
    - ARTCC to ARTCC (intra-facility)
-    - (Force AAL123 FDB)
-    - “Point-Out, southwest Milford VORTAC. AAL123. Southbound”
-    - (Force AAL123 FDB)
-    - “Point-Out, 11 miles southwest Milford VORTAC. AAL123. Climbing FL340. Southbound.”
+     - (Force AAL123 FDB)
+     - “Point-Out, southwest Milford VORTAC. AAL123. Southbound”
+     - (Force AAL123 FDB)
+     - “Point-Out, 11 miles southwest Milford VORTAC. AAL123. Climbing FL340. Southbound.”
    - ARTCC to TRACON
-    - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL210. westbound”
-    - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL213. Climbing FL230. Direct Myton VOR/DME.”
-    - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL213. Climbing FL230. North eastbound until the border and then turning more eastbound.”
+     - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL210. westbound”
+     - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL213. Climbing FL230. Direct Myton VOR/DME.”
+     - “Point-Out, 6 miles southwest FRNZY intersection. Beacon 1324. FL213. Climbing FL230. North eastbound until the border and then turning more eastbound.”
    - TRACON to ARTCC
-    - “Point-Out, 6 miles southeast Fairfield VORTAC. Beacon 1345. 16,000. Southeast-Bound to the boundary and then reversing course.”
-    - “Point-Out, 6 miles southeast Fairfield VORTAC. Beacon 1345. 16,200. Block 15,000 through 17,000. Southeast-Bound to the boundary and then reversing course.”
+     - “Point-Out, 6 miles southeast Fairfield VORTAC. Beacon 1345. 16,000. Southeast-Bound to the boundary and then reversing course.”
+     - “Point-Out, 6 miles southeast Fairfield VORTAC. Beacon 1345. 16,200. Block 15,000 through 17,000. Southeast-Bound to the boundary and then reversing course.”
    - TRACON to TRACON (intra-facility) (or airport using the same RADAR Feed as the TRACON)
-    - “Point-Out, northwest Fairfield VORTAC. N823AA. 10,000. Southeast-bound”
-    - “Point-Out, northwest Fairfield VORTAC. N823AA. 13,000. Descending 9,000. Direct Fairfield VORTAC.”
+     - “Point-Out, northwest Fairfield VORTAC. N823AA. 10,000. Southeast-bound”
+     - “Point-Out, northwest Fairfield VORTAC. N823AA. 13,000. Descending 9,000. Direct Fairfield VORTAC.”
 
 ---
 
